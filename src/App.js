@@ -211,16 +211,26 @@ function JobDetails() {
             <div className="Tiny" style={{ margin: 0 }}>
               {JOB.applicants}
             </div>
-            <a className="LinkLike" href="#" onClick={(e) => e.preventDefault()}>
+            <button
+              className="LinkLike"
+              type="button"
+              onClick={() => {
+                const text = `${JOB.title} · ${JOB.company} (${JOB.location})`;
+                if (navigator.clipboard?.writeText) {
+                  navigator.clipboard.writeText(text);
+                }
+              }}
+              style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer" }}
+            >
               <Icon name="share" size={16} />
               Share
-            </a>
+            </button>
           </div>
         </div>
 
         <div className="SectionCard">
           <h3 className="SectionTitle">{JOB.aboutTitle}</h3>
-          <a className="LinkLike" href="#" onClick={(e) => e.preventDefault()}>
+          <a className="LinkLike" href="https://www.instagram.com" target="_blank" rel="noreferrer">
             Instagram page <Icon name="external" size={16} />
           </a>
           <p className="Tiny" style={{ marginTop: 10, whiteSpace: "pre-line" }}>
