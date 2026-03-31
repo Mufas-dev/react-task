@@ -169,6 +169,13 @@
   text-decoration: none;
 }
 
+.LinkButton {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 .BottomNav {
   height: 72px;
   background: rgba(255, 255, 255, 0.92);
